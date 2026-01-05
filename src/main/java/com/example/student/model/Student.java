@@ -1,6 +1,8 @@
 package com.example.student.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -8,8 +10,9 @@ import jakarta.persistence.Table;
 @Table(name = "student")
 public class Student {
 
-    @Id
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String dept;
     private String empid;
@@ -30,11 +33,11 @@ public class Student {
 	public Student() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

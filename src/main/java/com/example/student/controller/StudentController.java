@@ -25,7 +25,9 @@ public class StudentController {
     // CREATE
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    	Student s=studentService.saveStudent(student);
+    	System.out.println(s);
+        return s;
     }
 
     // READ ALL
